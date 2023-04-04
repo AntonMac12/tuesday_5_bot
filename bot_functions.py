@@ -36,6 +36,7 @@ def button_message(message):
 @bot.message_handler(content_types=['contact', 'location'])
 def save_user(message):
     if message.contact is not None:  # если номер телефона передали
+        print(message.contact)
         with open('users.txt', 'a', encoding='utf-8') as file:  # записываем инфу о пользователе в файл
             file.write(f'{message.contact}\n')
     elif message.location is not None:  # если локацию передали
