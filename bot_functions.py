@@ -16,7 +16,7 @@ def start(message):  # параметр - это сообщение от пол�
     elif message.text == '/help':
         template = make_template('templates/help.html')
         msg = template.render()
-        bot.send_message(message.chat.id, text=answers['help'], parse_mode='html')
+        bot.send_message(message.chat.id, msg, parse_mode='html')
     elif message.text == '/dog':
         img = send_image()
         bot.send_photo(message.chat.id, photo=img)
